@@ -9,6 +9,7 @@ on: [push]
 jobs:
   job1:
     name: first
+    #https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-latest
     steps:
       - name: s_one

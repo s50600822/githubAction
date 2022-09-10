@@ -1,0 +1,23 @@
+name: sel
+on: [push]
+jobs:
+  sel:
+    name: kachu
+    #https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+#      - name: Install Chrome
+#        run: |
+#          chmod +x ./InstallChrome.sh
+#           ./InstallChrome.sh
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Check Chrome version
+        run: chrome --version
+
+      - name: check java
+        run: java -version
