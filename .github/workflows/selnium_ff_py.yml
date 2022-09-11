@@ -23,3 +23,4 @@ jobs:
           geckodriver --version
           python --version
           python3 --version
+          python sel.py
