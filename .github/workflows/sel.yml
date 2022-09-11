@@ -15,6 +15,8 @@ jobs:
 
       - name: Install Chrome
         uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
 
       - name: Check Chrome version
         run: chrome --version
@@ -24,13 +26,18 @@ jobs:
         uses: nanasess/setup-chromedriver@v1
         with:
           #https://chromedriver.storage.googleapis.com/
-          chromedriver-version: '106.0.5249.21'
+          #chromedriver-version: '106.0.5249.21'
+          chromedriver-version: '105.0.5195.52'
 
       - name: check java
         run: java -version
 
       - name: do stuff
+        #https://stackoverflow.com/questions/50642308/webdriverexception-unknown-error-devtoolsactiveport-file-doesnt-exist-while-t
         run: |
           pwd
           ls -lrthS
           which chromedriver
+          export DRIVER='/usr/local/bin/chromedriver'
+          java -version
+          java -jar priceTracker-1.0-SNAPSHOT.jar
