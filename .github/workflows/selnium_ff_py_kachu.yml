@@ -1,10 +1,8 @@
 name: watch motkachu
 
 on:
-  #https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
   schedule:
-    # https://crontab.guru/examples.html
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   sel:
