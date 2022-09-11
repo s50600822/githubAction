@@ -28,3 +28,9 @@ jobs:
 
       - name: check java
         run: java -version
+
+      - name: do stuff
+        run: |
+          pwd
+          ls -lrthS
+          which chromedriver
