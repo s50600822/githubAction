@@ -9,6 +9,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
       - name: install ff
         #https://github.com/marketplace/actions/setup-firefox
         uses: browser-actions/setup-firefox@latest
@@ -25,4 +30,4 @@ jobs:
           python3 --version
           pip3 install --upgrade requests
           pip3 install selenium
-          python sel.py
+          python3 sel.py
