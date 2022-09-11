@@ -9,7 +9,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name:
+      - name: install chrome driver and chrome
         #https://github.com/marketplace/actions/setup-chromedriver
         uses: nanasess/setup-chromedriver@v1
 
