@@ -1,4 +1,4 @@
-name: sel
+name: selenium
 on: [push]
 jobs:
   sel:
