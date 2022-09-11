@@ -1,0 +1,39 @@
+name: watch motkachu
+
+on:
+  #https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+  schedule:
+    # https://crontab.guru/examples.html
+    - cron: '*/10 * * * *'
+
+jobs:
+  sel:
+    name: motkachu
+    #https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: install ff
+        #https://github.com/marketplace/actions/setup-firefox
+        uses: browser-actions/setup-firefox@latest
+
+      - name: install gecko-driver
+        #https://github.com/marketplace/actions/setup-geckodriver
+        uses: browser-actions/setup-geckodriver@latest
+
+      - name: do stuff
+        run: |
+          firefox --version
+          geckodriver --version
+          python --version
+          python3 --version
+          pip3 install --upgrade requests
+          pip3 install selenium
+          python3 kachu_headless.py
