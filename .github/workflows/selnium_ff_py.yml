@@ -14,9 +14,9 @@ jobs:
         with:
           python-version: 3.9
 
-      - name: install ff
-        #https://github.com/marketplace/actions/setup-firefox
-        uses: browser-actions/setup-firefox@latest
+#      - name: install ff
+#        #https://github.com/marketplace/actions/setup-firefox
+#        uses: browser-actions/setup-firefox@latest
 
       - name: install gecko-driver
         #https://github.com/marketplace/actions/setup-geckodriver
@@ -24,7 +24,6 @@ jobs:
 
       - name: do stuff
         run: |
-          firefox --version
           geckodriver --version
           python --version
           python3 --version
