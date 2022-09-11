@@ -23,4 +23,5 @@ jobs:
           geckodriver --version
           python --version
           python3 --version
+          pip install selenium
           python sel.py
